@@ -56,20 +56,7 @@ namespace iOSLibTest
 
             // Disconnects from device and frees all unnecessary variables.
             devices[0].Disconnect();
-
-            devices = iOSLib.GetDevices();
-            devices[0].Connect();
-            devices[0].GetPhotos();
-
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            var groupedPhotoList = devices[0].Photos.PhotoList.GroupBy(x => x.CreationTime, (key, y) => new { date = key.Date, photos = y.ToList() });
-            foreach (var photosByAlbum in groupedPhotoList)
-            {
-                devices[0].Photos.SavePhotos(photosByAlbum.photos, desktopPath + @"\Saved\" + photosByAlbum.date.ToString("d").Replace("/", "_"));
-            }
-
-            devices[0].Disconnect();
-
+            
             Console.ReadLine();
         }
     }
