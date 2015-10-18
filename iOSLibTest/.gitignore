@@ -6,7 +6,6 @@
 *.user
 *.userosscache
 *.sln.docstates
-iOSLibTest2.sln
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
